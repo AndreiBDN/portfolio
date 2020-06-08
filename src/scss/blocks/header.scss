@@ -3,6 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 10;
 
     &-inner {
         display: flex;
@@ -13,7 +14,7 @@
 }
 
 .nav {
-    margin: 1.4rem 0;
+    margin: 2rem 0;
 
     &__list {
         display: flex;
@@ -25,6 +26,8 @@
         margin: 0 1.4rem;
         text-transform: uppercase;
         font-family: $poppins;
+        color: #fff;
+        cursor: pointer;
 
         &.active {
             color: $active-color;
@@ -35,9 +38,10 @@
         width: 2rem;
         height: 2rem;
         position: absolute;
-        right: 15rem;
+        right: 1.5rem;
         top: 50%;
         transform: translateY(-50%);
+        cursor: pointer;
 
         & span {
             position: absolute;

@@ -572,6 +572,7 @@ html {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 .header-inner {
@@ -581,7 +582,7 @@ html {
 }
 
 .nav {
-  margin: 1.4rem 0;
+  margin: 2rem 0;
 }
 
 .nav__list {
@@ -594,6 +595,8 @@ html {
   margin: 0 1.4rem;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
+  color: #fff;
+  cursor: pointer;
 }
 
 .nav__link.active {
@@ -604,9 +607,10 @@ html {
   width: 2rem;
   height: 2rem;
   position: absolute;
-  right: 15rem;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .nav__mob span {
@@ -648,3 +652,82 @@ html {
 .nav__mob span.active:after {
   transform: rotate(-45deg) translate(7px, -9px);
 }
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/main-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main__inner {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-content {
+  display: flex;
+  min-width: 900px;
+}
+
+.main__info {
+  margin-left: 65px;
+}
+
+.main__info-hi h2 {
+  font-family: "RobotoCondensed", sans-serif;
+  font-size: 2.1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.info__sub {
+  font-family: "RobotoCondensed", sans-serif;
+  font-size: 2.1rem;
+  color: #fff;
+}
+
+.info__sub span {
+  text-transform: uppercase;
+  color: #79DC4F;
+  font-size: 2.5rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer__lang {
+  margin: 50px;
+}
+
+.lang {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .6s;
+}
+
+.lang.active {
+  color: #79DC4F;
+}
+
+.webp .main { background-image: url(../img/main-bg.webp); }
