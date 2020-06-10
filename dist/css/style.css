@@ -601,6 +601,27 @@ body {
   transform: translateX(0);
 }
 
+.btn {
+  border: none;
+  background: none;
+  width: 165px;
+  border-radius: .56rem;
+  padding: 0.56rem;
+  text-align: center;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+.btn_green {
+  background-color: #51ba25;
+}
+
+.btn_grey {
+  background-color: #888;
+}
+
 .top-block {
   text-align: center;
   margin-bottom: 4.44rem;
@@ -676,7 +697,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 4;
 }
 
 .header.fix {
@@ -974,6 +995,127 @@ body {
   transform: translate3d(0, 0, 0);
   border-radius: inherit;
   transition: .7s;
+}
+
+.project {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FAFAFA;
+  height: 100%;
+  width: 1000px;
+  z-index: 5;
+  transform: translateX(100%);
+  overflow-y: auto;
+  transition: .7s;
+  transition-delay: .8s;
+}
+
+.project.active {
+  transform: translateX(0);
+}
+
+.project__inner {
+  padding: 1.5rem;
+}
+
+.project__top {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+.project__imgs {
+  max-width: 50%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 5px 2px rgba(98, 98, 98, 0.7);
+}
+
+.project__info {
+  padding-left: 2rem;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.project__info-item {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+.project__info-name {
+  width: 6.94rem;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  color: #48a421;
+  text-transform: uppercase;
+}
+
+.project__info-val {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: #626262;
+}
+
+.project__buttons {
+  bottom: 0;
+}
+
+.project__buttons button {
+  margin: 0 1.4rem;
+}
+
+.project__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(98, 98, 98, 0.7);
+  transform: translateX(100%);
+  transition: .5s;
+}
+
+.project__wrapper.active {
+  transform: translateX(0);
+}
+
+.project__dscr {
+  margin-top: 1.1rem;
+}
+
+.project__dscr-text {
+  height: 85px;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+  transition: all .8s;
+}
+
+.project__dscr-text p {
+  font-size: .8rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #626262;
+  font-weight: 300;
+  margin-left: 1.1rem;
+}
+
+.project__dscr-text.show {
+  height: auto;
+  transition: .8s;
+}
+
+.project__dscr__more {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #51ba25;
+  text-decoration: none;
+  font-size: .8rem;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .webp .main { background-image: url(../img/main-bg.webp); }

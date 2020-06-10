@@ -1,0 +1,116 @@
+.project{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $section-color;
+    height: 100%;
+    width: 1000px;
+    z-index: 5;
+    transform: translateX(100%);
+    overflow-y: auto;
+    transition: .7s;
+    transition-delay: .8s;
+
+    &.active{
+        transform: translateX(0);
+    }
+
+    &__inner{
+        padding: 1.5rem;
+    }
+
+    &__top{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-bottom: 6rem;
+    }
+
+    &__imgs{
+        max-width: 50%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 5px 2px rgba($text-color, .7);
+    }
+    &__info{
+        padding-left: 2rem;
+        width: 50%;
+        box-sizing: border-box;
+
+        &-item{
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 1.8rem;
+        }
+        &-name{
+            width: 6.94rem;
+            font-family: $cuprum;
+            font-weight: 700;
+            color: darken($active-color, 20%);
+            text-transform: uppercase;
+        }
+        &-val{
+            font-family: $ubuntu;
+            font-weight: 400;
+            color: $text-color;
+        }
+    }
+    &__buttons{
+        bottom: 0;
+        button {
+            margin: 0 1.4rem;
+        }
+    }
+
+    &__wrapper{
+        position: absolute;
+        top: 0;left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($text-color,.7);
+        transform: translateX(100%);
+        transition: .5s;
+
+        &.active{
+            transform: translateX(0);
+        }
+    }
+
+    &__dscr{
+        margin-top: 1.1rem;
+
+        &-text{
+            height: 85px;
+            overflow: hidden;
+            margin-bottom: 1.1rem;
+            transition: all .8s;
+            p {
+            font-size: .8rem;
+            font-family: $ubuntu;
+            color: $text-color;
+            font-weight: 300;
+            margin-left: 1.1rem;
+            
+            }
+            
+            
+
+            &.show{
+                height: auto;
+                transition: .8s;
+            }
+        }
+
+        &__more{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: darken($active-color, 15%);
+            text-decoration: none;
+            font-size: .8rem;
+            font-family: $ubuntu;
+        }
+    }
+}

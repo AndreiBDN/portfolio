@@ -1,0 +1,21 @@
+.btn{
+    border: none;
+    background: none;
+    width: 165px;
+    border-radius: .56rem;
+    padding: 0.56rem;
+    text-align: center;
+    color: #fff;
+    font-family: $ubuntu;
+    font-weight: 400;
+    font-size: .8rem;
+
+    &_green{
+        background-color: darken($active-color, 15%);
+
+    }
+
+    &_grey{
+        background-color: #888;
+    }
+}
