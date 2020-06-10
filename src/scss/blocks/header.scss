@@ -4,6 +4,9 @@
     top: 0;
     left: 0;
     z-index: 10;
+    &.fix{
+        background-color: $section-color;
+    }
 
     &-inner {
         display: flex;
@@ -27,9 +30,14 @@
         text-transform: uppercase;
         font-family: $poppins;
         color: #fff;
+        mix-blend-mode: difference;
         cursor: pointer;
+        &.black{
+            color: #404040;
+        }
 
         &.active {
+            mix-blend-mode: normal;
             color: $active-color;
         }
     }

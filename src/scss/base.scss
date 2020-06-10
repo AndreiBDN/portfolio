@@ -2,8 +2,34 @@ html{
     font-size: 18px;
     color: #404040;
 }
+body{
+    overflow-x: hidden;
+}
 
 .container {
     max-width: 1150px;
     margin: 0 auto;
+}
+.main-wrapper{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+.about, .portfolio, .contacts{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100% ;
+    width: 100vw;
+    background-color: #FAFAFA;
+    padding: 8.5rem 0 5rem;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: .8s;
+    &.active{
+        transform: translateX(0);
+    }
 }

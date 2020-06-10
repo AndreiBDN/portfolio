@@ -1,0 +1,102 @@
+.about{
+
+
+
+
+    &-data {
+        display: flex;
+        margin-bottom: 100px;
+
+
+        &__inner{
+            display: flex;
+            margin-left: 2.18rem;
+        }
+        &__block{
+            width: 50%;
+            padding:0 30px;
+        }
+        &__item{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #DFDFDF;
+
+            width: 300px;
+            margin-bottom: 1.23rem;
+
+            &-name {
+                white-space: nowrap;
+                font-family: $cuprum;
+                font-size: 1.12rem;
+                text-transform: uppercase;
+                color: darken($active-color, 15%);
+                font-weight: 700;
+            }
+            &-val{
+                font-family: $ubuntu;
+                color: $text-color;
+                font-size: 1.12rem;
+            }
+        }
+    }
+
+    &-me{
+        margin: 5.22rem 0;
+        
+    }
+}
+
+.skills{
+    &__inner{
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-block{
+            width: 50%;
+            border-right: 1px solid #DFDFDF;
+            padding: 0 1.8rem;
+            &:nth-last-child(1){
+                border-right: none;
+            }
+        }
+
+
+    }
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &-name{
+            font-family: $cuprum;
+            font-size: 1.05rem;
+            color: $text-color;
+        }
+        &-progress{
+            position: relative;
+            height: 2px;
+            width: 75%;
+            background-color: #DFDFDF;
+            &_line{
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 2px;
+                background-color:$active-color;
+            }
+        }
+        &-percent{
+            font-family: $ubuntu;
+            font-weight: 500;
+            color: $active-color;
+            font-size: .9rem;
+        }
+    }
+   
+}
