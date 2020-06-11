@@ -494,6 +494,14 @@ textarea {
 }
 
 @font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "RobotoCondensed";
   font-display: swap;
   src: url("../fonts/RobotoCondensed-Bold.woff") format("woff"), url("../fonts/RobotoCondensed-Bold.woff2") format("woff2");
@@ -564,6 +572,7 @@ html {
 
 body {
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -575,6 +584,7 @@ body {
   position: absolute;
   width: 100%;
   overflow: hidden;
+  overflow-y: auto;
   height: 100%;
 }
 
@@ -590,6 +600,7 @@ body {
   padding: 8.5rem 0 5rem;
   box-sizing: border-box;
   transform: translateX(100%);
+  visibility: hidden;
   overflow-x: hidden;
   overflow-y: auto;
   transition: .8s;
@@ -599,6 +610,57 @@ body {
 .portfolio.active,
 .contacts.active {
   transform: translateX(0);
+  visibility: visible;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in .5s;
+  animation: fade-in .5s;
+}
+
+.fade-out {
+  -webkit-animation: fade-out .5s;
+  animation: fade-out .5s;
 }
 
 .btn {
@@ -999,20 +1061,22 @@ body {
 
 .project {
   position: absolute;
-  top: 0;
+  display: block;
   right: 0;
   background-color: #FAFAFA;
-  height: 100%;
+  height: 95%;
   width: 1000px;
   z-index: 5;
   transform: translateX(100%);
-  overflow-y: auto;
+  overflow-y: scroll;
+  margin: 0 auto;
   transition: .7s;
-  transition-delay: .8s;
 }
 
 .project.active {
-  transform: translateX(0);
+  display: block;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 .project__inner {
@@ -1027,16 +1091,27 @@ body {
 }
 
 .project__imgs {
-  max-width: 50%;
-  border-radius: 1rem;
+  width: 60%;
   overflow: hidden;
+  overflow-y: scroll;
+  height: 350px;
   box-shadow: 0 0 5px 2px rgba(98, 98, 98, 0.7);
 }
 
+.project__imgs img {
+  width: 100%;
+}
+
 .project__info {
+  margin-top: 2rem;
   padding-left: 2rem;
-  width: 50%;
+  width: 40%;
   box-sizing: border-box;
+}
+
+.project__info-block {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .project__info-item {
@@ -1065,11 +1140,13 @@ body {
 }
 
 .project__buttons button {
-  margin: 0 1.4rem;
+  margin: 0 .7rem .7rem 0;
 }
 
 .project__wrapper {
-  position: absolute;
+  position: fixed;
+  display: flex;
+  align-items: center;
   top: 0;
   left: 0;
   z-index: 5;
@@ -1092,7 +1169,7 @@ body {
   height: 85px;
   overflow: hidden;
   margin-bottom: 1.1rem;
-  transition: all .8s;
+  transition: .8s;
 }
 
 .project__dscr-text p {
@@ -1116,6 +1193,47 @@ body {
   text-decoration: none;
   font-size: .8rem;
   font-family: "Ubuntu", sans-serif;
+}
+
+.contacts__inner {
+  display: flex;
+  justify-content: center;
+  margin-top: 4.3rem;
+}
+
+.contacts__me {
+  padding: 0 2.2rem;
+}
+
+.contacts__me-item {
+  width: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #DFDFDF;
+  margin-bottom: 1.8rem;
+}
+
+.contacts__me-item_val {
+  position: relative;
+  padding: 2rem 2rem 0;
+}
+
+.contacts__me-item_val a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.20rem;
+  color: #626262;
+  text-decoration: none;
+}
+
+.contacts__me-item_val span {
+  text-transform: uppercase;
+  font-family: "Cuprum", sans-serif;
+  color: #79DC4F;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .webp .main { background-image: url(../img/main-bg.webp); }

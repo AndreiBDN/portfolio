@@ -1,18 +1,22 @@
 .project{
     position: absolute;
-    top: 0;
+    display: block;
+    // top: 0;
     right: 0;
     background-color: $section-color;
-    height: 100%;
+    height: 95%;
     width: 1000px;
     z-index: 5;
     transform: translateX(100%);
-    overflow-y: auto;
+    overflow-y: scroll;
+    margin: 0 auto;
     transition: .7s;
-    transition-delay: .8s;
+
 
     &.active{
-        transform: translateX(0);
+        display: block;
+        transform: translateX(-50%);
+        left: 50%;
     }
 
     &__inner{
@@ -27,15 +31,26 @@
     }
 
     &__imgs{
-        max-width: 50%;
-        border-radius: 1rem;
+        width: 60%;
+        // border-radius: 1rem;
         overflow: hidden;
+        overflow-y: scroll;
+        height: 350px;
         box-shadow: 0 0 5px 2px rgba($text-color, .7);
+        img {
+            width: 100%;
+        }
     }
     &__info{
+        margin-top: 2rem;
         padding-left: 2rem;
-        width: 50%;
+        width: 40%;
         box-sizing: border-box;
+
+        &-block{
+            display: flex;
+            flex-wrap: wrap;
+        }
 
         &-item{
             display: flex;
@@ -59,12 +74,14 @@
     &__buttons{
         bottom: 0;
         button {
-            margin: 0 1.4rem;
+            margin: 0 .7rem .7rem 0;
         }
     }
 
     &__wrapper{
-        position: absolute;
+        position: fixed;
+        display: flex;
+        align-items: center;
         top: 0;left: 0;
         z-index: 5;
         width: 100%;
@@ -82,10 +99,13 @@
         margin-top: 1.1rem;
 
         &-text{
+
+
+
             height: 85px;
             overflow: hidden;
             margin-bottom: 1.1rem;
-            transition: all .8s;
+            transition: .8s;
             p {
             font-size: .8rem;
             font-family: $ubuntu;
@@ -94,13 +114,14 @@
             margin-left: 1.1rem;
             
             }
-            
-            
 
             &.show{
                 height: auto;
                 transition: .8s;
             }
+            
+            
+
         }
 
         &__more{

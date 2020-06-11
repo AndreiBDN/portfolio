@@ -1,0 +1,42 @@
+.contacts{
+    &__inner{
+        display: flex;
+        justify-content: center;
+        margin-top: 4.3rem;
+    }
+    &__me{
+        padding: 0 2.2rem;
+
+        &-item{
+            width: 100%;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #DFDFDF;
+            margin-bottom: 1.8rem;
+
+            &_val{
+               
+               position: relative;
+               padding: 2rem 2rem 0;
+
+               a {
+                font-family: $roboto;
+               font-weight: 400;
+               font-size: 1.20rem; 
+               color: $text-color;
+               text-decoration: none;
+               }
+
+               span{
+                   text-transform: uppercase;
+                   font-family: $cuprum;
+                   color: $active-color;
+                   font-size: 1rem;
+                   font-weight: 400;
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+               }
+            }
+        }
+    }
+}

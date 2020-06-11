@@ -4,6 +4,7 @@ html{
 }
 body{
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -14,6 +15,7 @@ body{
     position: absolute;
     width: 100%;
     overflow: hidden;
+    overflow-y: auto;
     height: 100%;
 }
 .about, .portfolio, .contacts{
@@ -26,10 +28,12 @@ body{
     padding: 8.5rem 0 5rem;
     box-sizing: border-box;
     transform: translateX(100%);
+    visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     transition: .8s;
     &.active{
         transform: translateX(0);
+        visibility: visible;
     }
 }
