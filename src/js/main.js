@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded',function(){
-    let open = require('./parts/open_project');
+    let open = require('./parts/open_project'),
+        nav = require('./parts/navigate');
 
-    open()
+
+
+    open();
+    nav();
+
 })

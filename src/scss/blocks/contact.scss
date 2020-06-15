@@ -1,42 +1,149 @@
-.contacts{
-    &__inner{
+.contacts {
+    &__inner {
         display: flex;
         justify-content: center;
         margin-top: 4.3rem;
-    }
-    &__me{
-        padding: 0 2.2rem;
+        transition: .5s;
 
-        &-item{
+        @include _767 {
+            flex-direction: column;
+        }
+
+        @include _600 {
+            margin-top: 0;
+        }
+    }
+
+    &__me {
+        padding: 0 2.2rem;
+        box-sizing: border-box;
+
+        @include _969 {
+            padding: 1.2rem;
+            width: 45%;
+        }
+
+        @include _767 {
+            width: 100%;
+        }
+
+        @include _600 {
+            padding: 0;
+        }
+
+        &-item {
             width: 100%;
             padding-bottom: 2px;
             border-bottom: 1px solid #DFDFDF;
             margin-bottom: 1.8rem;
+            transition: .5s;
 
-            &_val{
-               
-               position: relative;
-               padding: 2rem 2rem 0;
+            @include _767 {
+                margin-bottom: 0.6rem;
+            }
 
-               a {
-                font-family: $roboto;
-               font-weight: 400;
-               font-size: 1.20rem; 
-               color: $text-color;
-               text-decoration: none;
-               }
+            &_val {
 
-               span{
-                   text-transform: uppercase;
-                   font-family: $cuprum;
-                   color: $active-color;
-                   font-size: 1rem;
-                   font-weight: 400;
-                   position: absolute;
-                   top: 0;
-                   left: 0;
-               }
+                position: relative;
+                padding: 2rem 2rem 0;
+
+                @include _600 {
+                    padding: 0.8rem 0.8rem 0;
+                }
+
+                a {
+                    font-family: $roboto;
+                    font-weight: 400;
+                    font-size: 1.20rem;
+                    color: $text-color;
+                    text-decoration: none;
+
+
+                    @include _969 {
+                        font-size: 1rem;
+                    }
+
+                    @include _450 {
+                        font-size: .95rem;
+                    }
+                }
+
+                span {
+                    text-transform: uppercase;
+                    font-family: $cuprum;
+                    color: $active-color;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transition: .4s;
+
+                    @include _767 {
+                        position: relative;
+                        margin-right: 1.4rem;
+                    }
+                    @include _450{
+                        margin-right: 0.3rem;
+                    }
+                }
             }
         }
+    }
+
+    &__form {
+        &-text {
+            font-family: $roboto;
+            font-size: .9rem;
+            color: #888888;
+            margin-bottom: 2rem;
+
+            @include _450{
+                text-align: center;
+            }
+        }
+    }
+}
+
+.form {
+    @include _969 {
+        width: 50%;
+    }
+
+    @include _767 {
+        width: 100%;
+        margin-bottom: 2rem;
+
+    }
+
+    &-inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+
+        @include _450 {
+            flex-direction: column;
+        }
+    }
+
+    &-input {
+        width: 48%;
+        border: 1px solid darken($active-color, 15%);
+        border-radius: .56rem;
+        padding: 0.67rem 1.1rem;
+        box-sizing: border-box;
+
+        @include _450 {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-text {
+        resize: none;
+        width: 100%;
+        height: 9rem;
+        margin-bottom: 1rem;
     }
 }

@@ -39,18 +39,6 @@ function open(){
                      
         })
     });
-    // function closeProject(){
-        
-    //     workWrapper.classList.remove('active');
-    //     work.forEach(item=>item.classList.remove('active'));
-
-    //     setTimeout(function(){
-            
-    //     },400)
-    // }
-
-    // workWrapper.addEventListener('click', closeProject);
-
 
 }
 module.exports = open;

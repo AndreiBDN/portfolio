@@ -3,14 +3,21 @@
     display: block;
     // top: 0;
     right: 0;
+    left: 100%;
     background-color: $section-color;
+    border-radius: 5px;
     height: 95%;
     width: 1000px;
     z-index: 5;
     transform: translateX(100%);
     overflow-y: scroll;
     margin: 0 auto;
+    box-shadow: 0 0 .9rem .4rem rgba($text-color, 1.0);
     transition: .7s;
+
+    @include _1170{
+        width: 95%;
+    }
 
 
     &.active{
@@ -21,6 +28,10 @@
 
     &__inner{
         padding: 1.5rem;
+
+        @include _450 {
+            padding: 0.6rem;
+        }
     }
 
     &__top{
@@ -28,6 +39,11 @@
         flex-wrap: wrap;
         position: relative;
         margin-bottom: 6rem;
+
+        @include _969{
+            flex-direction: column;
+            margin-bottom: 1.1rem;
+        }
     }
 
     &__imgs{
@@ -37,8 +53,14 @@
         overflow-y: scroll;
         height: 350px;
         box-shadow: 0 0 5px 2px rgba($text-color, .7);
+        transition: .5s;
         img {
             width: 100%;
+        }
+
+        @include _969{
+            width: 100%;
+            height: auto;
         }
     }
     &__info{
@@ -46,6 +68,18 @@
         padding-left: 2rem;
         width: 40%;
         box-sizing: border-box;
+        transition: .5s;
+
+        @include _969{
+            width: 100%;
+            display: flex;
+        }
+        @include _767{
+            padding-left: 0;
+        }
+        @include _600 {
+            flex-direction: column;
+        }
 
         &-block{
             display: flex;
@@ -57,6 +91,11 @@
             justify-content: flex-start;
             width: 100%;
             margin-bottom: 1.8rem;
+            transition: .5s;
+
+            @include _969{
+                margin-bottom: 0.8rem;
+            }
         }
         &-name{
             width: 6.94rem;
@@ -64,11 +103,21 @@
             font-weight: 700;
             color: darken($active-color, 20%);
             text-transform: uppercase;
+            transition: .5s;
+
+            @include _450{
+                font-size: .8rem;
+            }
         }
         &-val{
             font-family: $ubuntu;
             font-weight: 400;
             color: $text-color;
+            transition: .5s;
+
+            @include _450{
+                font-size: .8rem;
+            }
         }
     }
     &__buttons{
@@ -86,12 +135,16 @@
         z-index: 5;
         width: 100%;
         height: 100%;
-        background-color: rgba($text-color,.7);
-        transform: translateX(100%);
+        background-color: rgba($text-color,.4);
+        // transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0;
         transition: .5s;
 
         &.active{
             transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
         }
     }
 
@@ -112,6 +165,12 @@
             color: $text-color;
             font-weight: 300;
             margin-left: 1.1rem;
+            text-align: center;
+            transition: .5s;
+
+            @include _600{
+                margin-left: 0;
+            }
             
             }
 

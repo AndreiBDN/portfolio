@@ -1,6 +1,10 @@
 .top-block{
     text-align: center;
     margin-bottom: 4.44rem;
+    @include _600{
+        margin-bottom: 2.5rem;
+    }
+
 }
 .top-sub{
     display: flex;
@@ -21,11 +25,27 @@
     font-size: 2.78rem;
     font-weight: 700;
     margin: 0 20px;
+    transition: .5s;
+    @include _600{
+        font-size: 2.4rem;
+    }
+
+    @include _450{
+        font-size: 2rem;
+    }
 }
 .top-text {
     font-family: $cuprum;
     font-size: 1.5rem;
-    color: darken($active-color, $amount: 20%)
+    color: darken($active-color, $amount: 20%);
+    transition: .5s;
+
+    @include _600{
+        font-size: 1.2rem;
+    }
+    @include _450{
+        font-size: 1rem;
+    }
 }
 
 .my-photo {
@@ -35,6 +55,17 @@
     position: relative;
     width: 250px;
     height: 250px;
+    transition: .5s;
+    @include _767{
+        min-width: 215px;
+        height: 215px;
+        width: 215px;
+    }
+    @include _600{
+        margin-bottom: 2rem;
+        min-width: 250px;
+        height: 250px;
+    }
     & img {
 
         position: absolute;
@@ -42,6 +73,17 @@
         left: -0.5rem;
         border-radius: inherit;
         max-width: 250px;
+
+        transition: .5s;
+        @include _767{
+            transition: .5s;
+            width: 215px;
+        }
+
+        @include _600{
+            transition: .5s;
+            width: 250px;
+        }
     }
 
 }

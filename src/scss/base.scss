@@ -8,7 +8,7 @@ body{
 }
 
 .container {
-    max-width: 1150px;
+    max-width: 1178px;
     margin: 0 auto;
 }
 .main-wrapper{
@@ -25,15 +25,24 @@ body{
     height:100% ;
     width: 100vw;
     background-color: #FAFAFA;
-    padding: 8.5rem 0 5rem;
+    padding: 8.5rem 1rem 5rem;
     box-sizing: border-box;
     transform: translateX(100%);
     visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     transition: .8s;
+    @include _600{
+        padding-top: 3rem;
+    }
+    // padding: 0 0.8rem;
     &.active{
         transform: translateX(0);
         visibility: visible;
+        // @include _600{
+        //     padding-top: 3rem;
+        // }
+
     }
+
 }
