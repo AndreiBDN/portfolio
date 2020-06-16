@@ -801,6 +801,7 @@ body {
 }
 
 .nav__mob {
+  display: none;
   width: 2rem;
   height: 2rem;
   position: absolute;
@@ -808,7 +809,10 @@ body {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  display: none;
+}
+
+.nav__mob.active {
+  display: block;
 }
 
 .nav__mob span {
@@ -849,10 +853,6 @@ body {
 
 .nav__mob span.active:after {
   transform: rotate(-45deg) translate(7px, -9px);
-}
-
-.nav__mob.active {
-  display: block;
 }
 
 .main {
@@ -1499,10 +1499,6 @@ body {
   .nav__link {
     display: block;
     padding: 1rem;
-  }
-
-  .nav__mob {
-    display: block;
   }
 
   .main {

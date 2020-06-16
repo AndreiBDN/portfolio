@@ -83,6 +83,7 @@
     }
 
     &__mob {
+        display: none;
         width: 2rem;
         height: 2rem;
         position: absolute;
@@ -90,11 +91,16 @@
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        display: none;
-
-        @include _600 {
+        &.active {
             display: block;
+
         }
+
+        // @include _600 {
+        //     display: block;
+
+           
+        // }
 
         & span {
             position: absolute;
@@ -136,10 +142,7 @@
             }
         }
 
-        &.active {
-            display: block;
-
-        }
+       
 
 
     }
