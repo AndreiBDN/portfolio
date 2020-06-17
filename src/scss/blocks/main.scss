@@ -14,6 +14,13 @@
 
     @include _600{
         display: block;
+
+    }
+    @include _600{
+        @include _land{
+            overflow-y: scroll;
+        }
+        
     }
 
     &__inner {
@@ -21,9 +28,13 @@
         top: 35%;
         left: 50%;
         transform: translateX(-50%);
+        transition: .5s;
 
         @include _969 {
             top: 20%;
+            @include _land{
+                top: 35%;
+            }
         }
 
         @include _600{
@@ -43,6 +54,11 @@
             flex-direction: column;
             align-items: center;
             min-width: 760px;
+            @media (orientation: landscape){
+                flex-direction: row;
+                min-width: 500px;
+            }
+
         }
         @include _600{
             display: none;
@@ -52,10 +68,14 @@
     &__photo {
         @include _969 {
             margin-bottom: 2rem;
+            @include _land {
+                margin-bottom: 0;
+                max-width: 191px;
+            }
         }
     }
     &__img{
-        @include _600{
+        @include _969{
             max-width: 100%;
         }
     }

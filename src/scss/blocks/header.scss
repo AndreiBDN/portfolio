@@ -8,6 +8,7 @@
 
 
     &.fix {
+        background-color: $section-color;
         @include _600 {
             height: 3rem;
             background-color: $section-color;
@@ -91,6 +92,9 @@
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
+        @include _land{
+            display: none;
+        }
         &.active {
             display: block;
 

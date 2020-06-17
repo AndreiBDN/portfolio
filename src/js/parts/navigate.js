@@ -11,9 +11,12 @@ function navigate() {
 
     window.addEventListener('resize', () => {
         let bodySize = document.body.clientWidth;
+
+        console.log(bodySize);
+        
         if (bodySize > 600) {
             hideMobNav();
-        } else if (bodySize < 600 && sections[0].classList.contains('active')) {
+        } else if (bodySize <= 600 && sections[0].classList.contains('active')) {
             hideMobNav();
 
         } else {
@@ -24,7 +27,7 @@ function navigate() {
     function hideMobOnMain() {
         if (widthScreen < 601 && sections[0].classList.contains('active')) {
             hideMobNav()
-        } else if (widthScreen > 601) {
+        } else if (widthScreen >= 601) {
             hideMobNav();
         } else {
             shovNav();

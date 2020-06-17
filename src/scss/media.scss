@@ -34,3 +34,8 @@
     }
     
 }
+@mixin _land {
+    @media (orientation: landscape){
+        @content;
+    }
+}
