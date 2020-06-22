@@ -1,0 +1,12 @@
+.slider__btn {
+    position: absolute;
+    bottom: -32px;
+    cursor: pointer;
+
+    &_prev{
+        left: 0;
+    }
+    &_next{
+        right: 0;
+    }
+}

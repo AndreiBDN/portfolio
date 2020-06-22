@@ -128,7 +128,7 @@
     }
 
     &-input {
-        width: 48%;
+        width: 100%;
         border: 1px solid darken($active-color, 15%);
         border-radius: .56rem;
         padding: 0.67rem 1.1rem;
@@ -136,7 +136,7 @@
 
         @include _450 {
             width: 100%;
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
         }
     }
 
@@ -144,6 +144,13 @@
         resize: none;
         width: 100%;
         height: 9rem;
+        margin-bottom: 1rem;
+    }
+}
+.input-wrap {
+    width: 48%;
+    @include _450 {
+        width: 100%;
         margin-bottom: 1rem;
     }
 }

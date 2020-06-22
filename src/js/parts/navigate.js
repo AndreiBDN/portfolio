@@ -11,8 +11,8 @@ function navigate() {
 
     window.addEventListener('resize', () => {
         let bodySize = document.body.clientWidth;
+            widthScreen = bodySize;
 
-        console.log(bodySize);
         
         if (bodySize > 600) {
             hideMobNav();
@@ -84,6 +84,7 @@ function navigate() {
                 fixHeader(target);
                 let block = document.querySelector(`.${target}`);
                 changeBlock(block);
+                hideMobOnMain();
             } catch (error) {
                 target = e.target.closest('.main-mobile__item').dataset.link;
                 links.forEach(function (i) {
@@ -94,8 +95,9 @@ function navigate() {
                 fixHeader(target);
                 let block = document.querySelector(`.${target}`);
                 changeBlock(block);
+                hideMobOnMain();
             }
-            hideMobOnMain();
+            
 
             setTimeout(function(){
                 navList.classList.remove('show');

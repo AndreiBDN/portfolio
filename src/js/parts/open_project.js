@@ -1,8 +1,8 @@
 function open(){
     let projects = document.querySelectorAll('.portfolio__item'),
         work = document.querySelectorAll('.project'),
-        workWrapper = document.querySelector('.project__wrapper'),
-        close = document.querySelector('.close');
+        workWrapper = document.querySelector('.project__wrapper');
+
 
 
 
@@ -15,9 +15,10 @@ function open(){
                if(w.dataset.project == a){
                    workWrapper.classList.add('active');
                    w.classList.add('active');
-                   
+
                    workWrapper.addEventListener('click', function(){
                        w.classList.remove('active');
+
                        setTimeout(()=>{
                         workWrapper.classList.remove('active');
                        },500)
@@ -26,6 +27,7 @@ function open(){
                    w.addEventListener('click', function(e){
                        if(e.target.classList.contains('close')){
                         w.classList.remove('active');
+
                         setTimeout(()=>{
                          workWrapper.classList.remove('active');
                         },500)

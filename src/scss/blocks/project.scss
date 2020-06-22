@@ -47,10 +47,11 @@
     }
 
     &__imgs{
+        position: relative;
         width: 60%;
         // border-radius: 1rem;
-        overflow: hidden;
-        overflow-y: scroll;
+        // overflow: hidden;
+        // overflow-y: scroll;
         height: 350px;
         box-shadow: 0 0 5px 2px rgba($text-color, .7);
         transition: .5s;
@@ -191,6 +192,9 @@
             text-decoration: none;
             font-size: .8rem;
             font-family: $ubuntu;
+            &:focus {
+                outline: none;
+            }
         }
     }
 }

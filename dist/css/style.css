@@ -652,6 +652,56 @@ body {
   }
 }
 
+@-webkit-keyframes skill-out {
+  0% {
+    transform: translateX(0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes skill-out {
+  0% {
+    transform: translateX(0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes skill-in {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes skill-in {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .fade-in {
   -webkit-animation: fade-in .5s;
   animation: fade-in .5s;
@@ -1012,62 +1062,54 @@ body {
   margin: 5.22rem 0;
 }
 
-.skills__inner {
-  margin-top: 2.5rem;
+.skills__names {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  transition: .5s;
+  margin-top: 2rem;
+  padding-left: 3rem;
+  flex-wrap: wrap;
 }
 
-.skills__inner-block {
-  width: 50%;
-  border-right: 1px solid #DFDFDF;
-  padding: 0 1.8rem;
-}
-
-.skills__inner-block:nth-last-child(1) {
-  border-right: none;
-}
-
-.skills__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.skills__item:last-child {
-  margin-bottom: 0;
-}
-
-.skills__item-name {
-  font-family: "Cuprum", sans-serif;
-  font-size: 1.05rem;
+.skills__name {
+  cursor: pointer;
+  margin-right: 1.1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 1.22rem;
   color: #626262;
 }
 
-.skills__item-progress {
-  position: relative;
-  height: 2px;
-  width: 75%;
-  background-color: #DFDFDF;
+.skills__name.active {
+  color: #5bcf29;
 }
 
-.skills__item-progress_line {
-  display: block;
+.skills__wrapper {
+  margin-top: 1.8rem;
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+}
+
+.skills__dscr {
   position: absolute;
   top: 0;
   left: 0;
-  height: 2px;
-  background-color: #79DC4F;
+  min-width: 100%;
+  font-family: "Cuprum", sans-serif;
+  font-size: 1.22rem;
+  color: #888888;
+  transform: translateX(100%);
 }
 
-.skills__item-percent {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  color: #79DC4F;
-  font-size: .9rem;
+.skills__dscr.active {
+  -webkit-animation: skill-in .4s ease-out forwards;
+  animation: skill-in .4s ease-out forwards;
+}
+
+.skills__dscr.active.out {
+  -webkit-animation: skill-out .4s ease-out  forwards;
+  animation: skill-out .4s ease-out  forwards;
 }
 
 .portfolio__inner {
@@ -1139,9 +1181,8 @@ body {
 }
 
 .project__imgs {
+  position: relative;
   width: 60%;
-  overflow: hidden;
-  overflow-y: scroll;
   height: 350px;
   box-shadow: 0 0 5px 2px rgba(98, 98, 98, 0.7);
   transition: .5s;
@@ -1253,6 +1294,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.project__dscr__more:focus {
+  outline: none;
+}
+
 .contacts__inner {
   display: flex;
   justify-content: center;
@@ -1313,7 +1358,7 @@ body {
 }
 
 .form-input {
-  width: 48%;
+  width: 100%;
   border: 1px solid #51ba25;
   border-radius: .56rem;
   padding: 0.67rem 1.1rem;
@@ -1325,6 +1370,24 @@ body {
   width: 100%;
   height: 9rem;
   margin-bottom: 1rem;
+}
+
+.input-wrap {
+  width: 48%;
+}
+
+.slider__btn {
+  position: absolute;
+  bottom: -32px;
+  cursor: pointer;
+}
+
+.slider__btn_prev {
+  left: 0;
+}
+
+.slider__btn_next {
+  right: 0;
 }
 
 @media (max-width: 1170px) {
@@ -1564,18 +1627,6 @@ body {
     width: 100%;
   }
 
-  .skills__inner {
-    flex-direction: column;
-    margin: 2.5rem 2rem;
-  }
-
-  .skills__inner-block {
-    width: 100%;
-    border: none;
-    border-right: none;
-    margin-bottom: 1.5rem;
-  }
-
   .project__info {
     flex-direction: column;
   }
@@ -1620,10 +1671,6 @@ body {
     margin: 2rem 0;
   }
 
-  .skills__inner {
-    margin: 2.2rem 0;
-  }
-
   .portfolio__item-photo {
     margin: 0.5rem;
   }
@@ -1657,6 +1704,10 @@ body {
   }
 
   .form-input {
+    width: 100%;
+  }
+
+  .input-wrap {
     width: 100%;
     margin-bottom: 1rem;
   }

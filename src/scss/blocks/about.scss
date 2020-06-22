@@ -84,70 +84,52 @@
 }
 
 .skills{
-    &__inner{
-        margin-top: 2.5rem;
+    &__names{
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        transition: .5s;
-
-        @include _600{
-            flex-direction: column;
-            margin: 2.5rem 2rem;
-        }
-        @include _450{
-            margin: 2.2rem 0;
-        }
-
-        &-block{
-            width: 50%;
-            border-right: 1px solid #DFDFDF;
-            padding: 0 1.8rem;
-            &:nth-last-child(1){
-                border-right: none;
-            }
-            @include _600{
-                width: 100%;
-                border: none;
-                border-right: none;
-                margin-bottom: 1.5rem;
-            }
-        }
-
+        margin-top: 2rem;
+        padding-left: 3rem;
+        flex-wrap: wrap;
 
     }
-    &__item{
+    &__name{
+        cursor: pointer;
+        margin-right: 1.1rem;
+        font-family: $ubuntu;
+        font-weight: 500;
+        font-size: 1.22rem;
+        color: $text-color;
+        &.active{
+            color: darken($active-color, 10%);
+        }
+    }
+    &__wrapper{
+        margin-top: 1.8rem;
+        position: relative;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        height: 250px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        &:last-child{
-            margin-bottom: 0;
-        }
-        &-name{
-            font-family: $cuprum;
-            font-size: 1.05rem;
-            color: $text-color;
-        }
-        &-progress{
-            position: relative;
-            height: 2px;
-            width: 75%;
-            background-color: #DFDFDF;
-            &_line{
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 2px;
-                background-color:$active-color;
+    }
+    &__dscr{
+        position: absolute;
+        top: 0;left: 0;
+        min-width: 100%;
+        font-family: $cuprum;
+        font-size: 1.22rem;
+        color: #888888;
+        transform: translateX(100%);
+        // transition: .5s;
+
+        &.active{
+
+            // transform: translateX(0);
+            animation: skill-in .4s ease-out forwards;
+
+            &.out{
+                animation: skill-out .4s ease-out  forwards;
+
+
             }
-        }
-        &-percent{
-            font-family: $ubuntu;
-            font-weight: 500;
-            color: $active-color;
-            font-size: .9rem;
         }
     }
    
